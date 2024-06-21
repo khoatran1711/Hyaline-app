@@ -1,0 +1,13 @@
+.product-card {
+    &:hover {
+        .prev,
+        .next {
+            display: flex;
+        }
+    }
+
+    .prev,
+    .next {
+        display: none;
+    }
+}

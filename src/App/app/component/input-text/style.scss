@@ -1,0 +1,18 @@
+.ant-input:focus {
+    border-color: #1c1f21;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(17, 17, 18, 0.2);
+    box-shadow: 0 0 0 2px rgb(122 130 135 / 20%)
+}
+
+.ant-input-outlined:hover {
+    border-color: #1c1f21;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}

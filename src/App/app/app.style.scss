@@ -1,0 +1,149 @@
+@import "../../breakpoint.style.scss";
+
+-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+@keyframes firstLoad {
+  0% {
+    top: 30px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+}
+
+.title {
+  animation: firstLoad;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  transition-timing-function: linear;
+  top: 100px;
+  transition: 300ms;
+}
+
+.title-white {
+  color: white;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: transform 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+
+  &:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+.title-black {
+  color: black;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: transform 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+
+  &:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+.move-in {
+  top: 0;
+}
+
+.move-out {
+  top: -100%;
+}
+
+.white-image {
+  filter: brightness(0) invert(1);
+}
+
+.white-button {
+  border: 1px solid black;
+  background: white;
+  color: black;
+
+  &:hover {
+    border: 1px solid white;
+    background: black;
+    color: white;
+  }
+}
+
+.black-button {
+  border: 1px solid white;
+  background: black;
+  color: white;
+
+  &:hover {
+    border: 1px solid #0072BA;
+    background: white;
+    color: #0072BA;
+  }
+
+}
+
+.show-on-scroll {
+  opacity: 0;
+  transform: translateY(-4em) rotateZ(0deg);
+  transition:
+    transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.5s 0.25s ease-out;
+  will-change: transform, opacity;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: rotateZ(0deg);
+  transition: 2s;
+}
+
+.hyaline-title-big {
+  font-size: 80px;
+  top: 100px;
+  color: white;
+
+  @include media("<=tablet") {
+    font-size: 60px;
+    top: 80px;
+  }
+}
+
+.hyaline-title-small {
+  font-size: 40px;
+  top: 15px;
+  color: black;
+
+  @include media("<=tablet") {
+    font-size: 30px;
+    top: 10px;
+  }
+}
